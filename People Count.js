@@ -3,7 +3,7 @@
 //
 // v0.1       Info: Count maximum people, show notification when >max nr of people in the room
 // v0.2       Changed text display method
-
+// v0.3 Added text display to include number of people recommended for Room
 const xapi = require('xapi');
 const maxPeople = 5
 const alertDuration = 30
@@ -22,7 +22,7 @@ function postStatusCall(amount) {
    console.log('DEBUG - Detected: ' + amount + ', max: ' + maxPeople);
    if (amount > maxPeople) {
        console.log('DEBUG - Alerting');
-       displayTextOnScreen("Too many people detected                       Room capacity = " + maxPeople)
+       displayTextOnScreen("Too many people detected                       Room capacity = " + maxPeople + "                                       People Present = "+amount)
    };
 }
 
